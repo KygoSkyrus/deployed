@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+    <title>b-card</title>
+    </script>
+    <style>
+          @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+        body{
+            margin: 0;
+            height: 0;
+            box-sizing: border-box;
+            font-family: roboto;
+            background-color:#efeeee;
+        }
+        #container{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color:#001d3d;
+            min-width: 350px;
+            height: 200px;
+            justify-content: space-between;
+            visibility: hidden;
+        }
+        .cbc{
+            visibility: visible;
+        }
+        .names{
+            text-align: center;
+            padding: 0 20px;
+        }
+        h1{
+            color: #ffd60a;
+            font-size: 35px;
+            padding-top: 30px;
+        }
+        h3{
+            color:white;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 12px;
+            position: relative;
+            bottom: 12px;
+        }
+        .contact{
+            width: 100%;
+            background-color: #ffd60a;   
+            flex-wrap: wrap;
+            display: flex;
+            padding: 10px;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        section{
+            padding: 0 3px;
+        }
+        /*form*/
+        form{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            top: 50%;
+            left: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            height: 400px;
+            background-color: #efeeee;
+            border-radius: 15px;
+            box-shadow: 6px 6px 6px 0 rgba(217,210,200,0.51),-6px -6px 6px 0 rgba(255,255,255,0.83) ;
+            padding: 40px;
+
+        }
+        input{
+            background-color: #efeeee;
+            border: none;
+            border-radius: 5px;
+            height: 40px;
+            padding:0 15px;
+            box-sizing: border-box;
+            box-shadow: 6px 6px 6px 0 rgba(217,210,200,0.51),-6px -6px 6px 0 rgba(255,255,255,0.83) ;
+            margin-top: 20px;
+            outline:none;
+            width: 100%;        
+        }
+        .btn{
+            margin-top: 20px;
+            margin-left: 20px;
+            box-shadow: 6px 6px 6px 0 rgba(217,210,200,0.51),-6px -6px 6px 0 rgba(255,255,255,0.83) ;
+            border:none;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;  
+            color: gray;
+        }
+        .btn:hover{
+            transform: scale(1.1);
+            transition: 300ms;
+        }
+        h2{
+            color: gray;
+        }
+        #heading{
+            text-align: center;
+            font-size: 40px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: gray;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="names">
+        <h1 id="one"></h1>
+        <h3 id="two"></h3>
+        </div>
+
+        <div class="contact">
+            <section id="three"></section>
+            <section id="four"></section>
+        </div>
+    </div>      
+
+    <p id="heading">Make your own Business Card</p>
+
+    <div id="form" novalidate >
+        <form>
+        <input type="text" id="bname" placeholder="company/brand name"  name="bname">
+        <input type="text" id="name" placeholder="your name"  name="name">
+        <input type="number" id="pno" placeholder="contact Number" minlength="10"  name="pno">
+        <input type="email" id="mail" placeholder="e-mail"  name="email">
+        <button class="btn" id="btn" onclick="fun()">Generate</button>
+        </form>
+    </div>
+   <script>
+        
+        function fun(onclick){
+            event.preventDefault();
+            document.getElementById("one").innerHTML=$("#bname").val();
+            document.getElementById("two").innerHTML=$("#name").val();
+            document.getElementById("three").innerHTML=$("#pno").val();
+            document.getElementById("four").innerHTML=$("#mail").val();
+
+            $("#container").css("visibility","visible");
+            $("#form").hide();
+            $("#heading").hide();
+        }
+    </script>  
+</body>
+</html>
